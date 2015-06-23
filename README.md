@@ -54,3 +54,11 @@ I should not be able to:
 * Create a user that doesn't have an id, first name, last name, login, and password. 
 * Create a bike without an id and a user id.
 * Create a ride without an id, user id, and miles.
+
+###Requirements
+
+* At least three models
+* At least one one-to-many relationship
+* At least one many-to-many relationship
+* Unit tests for all business logic
+* Ability to fully interact with the application from the browser
