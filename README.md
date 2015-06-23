@@ -32,27 +32,25 @@ For example: I own three bikes, two of which I use on a regular basis. I don't c
 
 Here's what I want to be able to do:
 
-Create users
-Edit user information
-View user profile
-Delete users
-Create / update / delete bikes and descriptions
-Assign bikes to a user
-Fetch all bikes for a given user
-Create rides
-Assign rides to a user
-Assign rides to a bike
-Fetch all rides for a given user
-Fetch all rides for a given bike
+* Create users
+* Edit user information
+* View user profile
+* Delete users
+* Create / update / delete bikes and descriptions
+* Assign bikes to a user
+* Fetch all bikes for a given user
+* Create rides
+* Assign rides to a user
+* Assign rides to a bike
+* Fetch all rides for a given user
+* Fetch all rides for a given bike
 
-Maybe, if I have time, track maintenance items for each bike.
+* _Maybe, if I have time, track maintenance items for each bike._
 
 ###"Should not" cases
 
 I should not be able to:
 
-Create a user that doesn't have an id, first name, last name, login, and password. 
-
-Create a bike without an id and a user id.
-
-Create a ride without an id, user id, and miles.
+* Create a user that doesn't have an id, first name, last name, login, and password. 
+* Create a bike without an id and a user id.
+* Create a ride without an id, user id, and miles.
