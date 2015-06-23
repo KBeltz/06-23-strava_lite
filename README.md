@@ -6,22 +6,22 @@ For example: I own three bikes, two of which I use on a regular basis. I don't c
 
 ##Description
 
-###users table
+###cyclists table
 * id (primary key) - integer
 * first_name - string
 * last_name - string
-* user_name - string
+* nickname (optional) - string
 
 ###bikes table
 * id (primary key) - integer
-* user_id - integer
+* cyclist_id - integer
 * bike_name - string
 * description (optional) - string
 
 ###rides table
 * id (primary key) - integer
 * ride_name (optional) - string
-* user_id - integer
+* cyclist_id - integer
 * bike_id - integer
 * miles - decimal
 * time - datetime
@@ -31,17 +31,17 @@ For example: I own three bikes, two of which I use on a regular basis. I don't c
 
 Here's what I want to be able to do:
 
-* Create users
-* Edit user information
-* View user profile
-* Delete users
+* Create cyclists
+* Edit cyclist information
+* View cyclist profile
+* Delete cyclists
 * Create / update / delete bikes and descriptions
-* Assign bikes to a user
-* Fetch all bikes for a given user
+* Assign bikes to a cyclist
+* Fetch all bikes for a given cyclist
 * Create rides
-* Assign rides to a user
+* Assign rides to a cyclist
 * Assign rides to a bike
-* Fetch all rides for a given user
+* Fetch all rides for a given cyclist
 * Fetch all rides for a given bike
 
 * _Maybe, if I have time, track maintenance items for each bike._
@@ -50,9 +50,9 @@ Here's what I want to be able to do:
 
 I should not be able to:
 
-* Create a user that doesn't have an id, first name, and last name.
-* Create a bike without an id and a user id.
-* Create a ride without an id, user id, and miles.
+* Create a cyclist that doesn't have an id, first name, and last name.
+* Create a bike without an id and a cyclist id.
+* Create a ride without an id, cyclist id, and miles.
 
 ###Requirements
 
