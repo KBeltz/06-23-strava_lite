@@ -10,8 +10,7 @@ For example: I own three bikes, two of which I use on a regular basis. I don't c
 * id (primary key) - integer
 * first_name - string
 * last_name - string
-* login - string
-* password - string
+* user_name - string
 
 ###bikes table
 * id (primary key) - integer
