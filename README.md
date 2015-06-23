@@ -50,7 +50,7 @@ Here's what I want to be able to do:
 
 I should not be able to:
 
-* Create a user that doesn't have an id, first name, last name, login, and password. 
+* Create a user that doesn't have an id, first name, and last name.
 * Create a bike without an id and a user id.
 * Create a ride without an id, user id, and miles.
 
