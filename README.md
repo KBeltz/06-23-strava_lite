@@ -43,6 +43,7 @@ Here's what I want to be able to do:
 * Assign rides to a bike
 * Fetch all rides for a given cyclist
 * Fetch all rides for a given bike
+* Create rides in which the cyclist rides a bike that belongs to another cyclist
 
 * _Maybe, if I have time, track maintenance items for each bike._
 
