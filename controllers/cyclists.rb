@@ -20,9 +20,12 @@ end
 #
 # Adds cyclist to table
 get "/add_cyclist" do
-  Cyclist.add("first_name" => params["first_name"], "last_name" => params["last_name"], "nickname" => params["nickname"])
-  
-  erb :"/cyclists/success"
+  if params["first_name"].empty? || params["last_name"].empty?
+    erb :"/cyclists/add_cyclist_error"
+  else 
+    Cyclist.add("first_name" => params["first_name"], "last_name" => params["last_name"], "nickname" => params["nickname"])
+    erb :"/cyclists/success"
+  end
 end
 
 # ---------------------------------------------------------------------
@@ -80,17 +83,3 @@ get "/delete_cyclist/:x" do
   
   erb :"/cyclists/success"
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
