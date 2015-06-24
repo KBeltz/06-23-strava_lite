@@ -50,19 +50,18 @@ get "/edit_cyclist" do
   @new_cyclist = Cyclist.find(params["id"])
   
   if !params["first_name"].empty?
-    @new_cyclist["first_name"] = params["first_name"]
+    @new_cyclist.first_name = params["first_name"]
   end
 
   if !params["last_name"].empty?
-    @new_cyclist["last_name"] = params["last_name"]
+    @new_cyclist.last_name = params["last_name"]
   end
   
   if !params["nickname"].empty?
-    @new_cyclist["nickname"] = params["nickname"]
+    @new_cyclist.nickname = params["nickname"]
   end
   
-  # Save edited cyclist to database TODO: can't find save method.
-  # @new_cyclist.save
+  @new_cyclist.save
   
   erb :"/cyclists/success"
 end
