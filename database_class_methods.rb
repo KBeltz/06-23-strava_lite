@@ -69,15 +69,6 @@ module DatabaseClassMethods
     # Figure out the table's name from the class we're calling the method on.
     table_name = self.to_s.pluralize.underscore
     
-    DATABASE.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
+    DATABASE.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}").first
   end
-
-  # TODO
-  # - adding records to a table - INSERT
-  # def add(table_name)
-  #   DATABASE.execute("INSERT INTO #{table_name} (name, age) VALUES ('Sumeet', 500)")
-  # end
-  
-  # - delete -DELETE FROM locations WHERE id = 6
-  # - save - UPDATE customers SET name = 'Sumeet'
 end
