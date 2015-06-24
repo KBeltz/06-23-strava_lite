@@ -3,7 +3,7 @@
 <form action="/edit_cyclist">
   <p><h4>Choose a cyclist to edit:</h4><select name="id"></p>
     <% Cyclist.all.each do |item| %>
-    <option value="<%= item.id %>"> First Name: <%= item.first_name %> Last Name: <%= item.last_name %> Nickname: <%= item.nickname %></option>
+    <option value="<%= item.id %>"> First Name: <%= item.first_name %>, Last Name: <%= item.last_name %>, Nickname: <%= item.nickname %></option>
     <% end %>
   </select>
   

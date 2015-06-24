@@ -22,7 +22,7 @@ end
 get "/add_cyclist" do
   Cyclist.add("first_name" => params["first_name"], "last_name" => params["last_name"], "nickname" => params["nickname"])
   
-  # erb :"success"
+  erb :"/cyclists/success"
 end
 
 # ---------------------------------------------------------------------
@@ -64,7 +64,7 @@ get "/edit_cyclist" do
   # Save edited cyclist to database
   @new_cyclist.save
   
-  # erb :"success"
+  erb :"/cyclists/success"
 end
 
 # ---------------------------------------------------------------------
@@ -79,7 +79,7 @@ get "/delete_cyclist/:x" do
   @specific_cyclist = Cyclist.find(params["x"])
   @specific_cyclist.delete_row
   
-  # erb :"success"
+  erb :"/cyclists/success"
 end
 
 
