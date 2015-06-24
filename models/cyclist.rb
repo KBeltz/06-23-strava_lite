@@ -33,8 +33,8 @@ class Cyclist
   # name2 - String containing the last name of the cyclist being added
   #
   # Returns boolean
-  def self.valid?(options={})
-    if options.empty?
+  def self.valid?(name1, name2)
+    if name1.empty? || name2.empty?
       true
     else
       false

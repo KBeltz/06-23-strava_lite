@@ -20,9 +20,7 @@ end
 #
 # Adds cyclist to table
 get "/add_cyclist" do
-  binding.pry
-  if Cyclist.valid?({"first_name" => params["first_name"], "last_name" => params["last_name"]})
-    
+  if Cyclist.valid?(params["first_name"], params["last_name"])
     erb :"/cyclists/add_cyclist_error"
   else 
     Cyclist.add_to_database("first_name" => params["first_name"], "last_name" => params["last_name"], "nickname" => params["nickname"])
