@@ -34,9 +34,9 @@ module DatabaseClassMethods
     
     table_name = self.to_s.pluralize.underscore
     
-    CONNECTION.execute("INSERT INTO #{table_name} (#{column_names_for_sql}) VALUES (#{values_for_sql});")
+    DATABASE.execute("INSERT INTO #{table_name} (#{column_names_for_sql}) VALUES (#{values_for_sql});")
 
-    id = CONNECTION.last_insert_row_id
+    id = DATABASE.last_insert_row_id
     options["id"] = id
 
     self.new(options)
@@ -49,7 +49,7 @@ module DatabaseClassMethods
     # Figure out the table's name from the class we're calling the method on.
     table_name = self.to_s.pluralize.underscore
     
-    results = CONNECTION.execute("SELECT * FROM #{table_name}")
+    results = DATABASE.execute("SELECT * FROM #{table_name}")
 
     results_as_objects = []
     
@@ -69,13 +69,13 @@ module DatabaseClassMethods
     # Figure out the table's name from the class we're calling the method on.
     table_name = self.to_s.pluralize.underscore
     
-    CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
+    DATABASE.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
   end
 
   # TODO
   # - adding records to a table - INSERT
   # def add(table_name)
-  #   CONNECTION.execute("INSERT INTO #{table_name} (name, age) VALUES ('Sumeet', 500)")
+  #   DATABASE.execute("INSERT INTO #{table_name} (name, age) VALUES ('Sumeet', 500)")
   # end
   
   # - delete -DELETE FROM locations WHERE id = 6

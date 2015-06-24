@@ -1,9 +1,9 @@
-# require_relative "database_class_methods.rb"
-# require_relative "database_instance_methods.rb"
+require_relative "../database_class_methods.rb"
+require_relative "../database_instance_methods.rb"
 
 class Cyclist
-  # extend DatabaseClassMethods
-  # include DatabaseInstanceMethods
+  extend DatabaseClassMethods
+  include DatabaseInstanceMethods
   
 
   attr_accessor :id, :first_name, :last_name, :nickname

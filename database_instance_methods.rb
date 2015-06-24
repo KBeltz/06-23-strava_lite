@@ -16,7 +16,7 @@ module DatabaseInstanceMethods
     table_name = self.class.to_s.pluralize.underscore
     
     # Get the first/only row as a Hash.
-    result = CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{@id}").first
+    result = DATABASE.execute("SELECT * FROM #{table_name} WHERE id = #{@id}").first
     
     # Return only the value for the key of the field we're seeking.
     result[field]
