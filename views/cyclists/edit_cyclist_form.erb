@@ -1,0 +1,19 @@
+<h3>Edit Cyclist Profile</h3>
+   
+<form action="/edit_cyclist">
+  <p><h4>Choose a cyclist to edit:</h4><select name="id"></p>
+    <% Cyclist.all.each do |item| %>
+    <option value="<%= item.id %>"> First Name: <%= item.first_name %> Last Name: <%= item.last_name %> Nickname: <%= item.nickname %></option>
+    <% end %>
+  </select>
+  
+  <p><h4>Enter new item info. If field does not need to be updated, leave blank.</h4></p>
+  
+  <p>First Name: <input type="text" placeholder="Update First Name" name="first_name"></p>
+  <p>Last Name: <input type="text" placeholder="Update Last Name" name="last_name"></p>
+  <p>Nickname: <input type="text" placeholder="Update Nickname" name="nickname"></p>
+      
+  <p><input type="submit" value="edit profile"></p>
+</form>
+<br><br>
+<a href = "/home">Return To Main Menu</a>

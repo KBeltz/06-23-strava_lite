@@ -13,7 +13,7 @@ end
 
 # form for user to enter information to add cyclist
 get "/add_cyclist_form" do
-  erb :"add_cyclist_form"
+  erb :"/cyclists/add_cyclist_form"
 end
 
 # Gets parameters from add_cyclist_form.
@@ -31,7 +31,7 @@ end
 
 # Returns a list of all rows in the cyclists table.
 get "/view_cyclists" do
-  erb :"view_cyclists"
+  erb :"/cyclists/view_cyclists"
 end
 
 # ---------------------------------------------------------------------
@@ -40,7 +40,7 @@ end
 
 # edit cyclists form
 get "/edit_cyclist_form" do
-  erb :"edit_cyclist_form"
+  erb :"/cyclists/edit_cyclist_form"
 end
 
 # Gets parameters from edit_cyclist_form
@@ -72,7 +72,7 @@ end
 # ---------------------------------------------------------------------
 
 get "/delete_cyclist" do
-  erb :"delete_cyclist"
+  erb :"/cyclists/delete_cyclist"
 end
 
 get "/delete_cyclist/:x" do
