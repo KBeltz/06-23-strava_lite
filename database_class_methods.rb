@@ -102,7 +102,7 @@ module DatabaseClassMethods
   # Add a new record to the database.
   #
   # Returns an Object.
-  def add(options={})
+  def add_to_database(options={})
     # Example: {"name" => "Sumeet", "age" => 500}
     
     column_names = options.keys

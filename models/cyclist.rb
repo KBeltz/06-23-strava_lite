@@ -26,4 +26,18 @@ class Cyclist
     @nickname = options["nickname"]
  
   end
+  
+  # method to validate cyclist profiles before they are added to the database
+  #
+  # name1 - String containing the first name of the cyclist being added
+  # name2 - String containing the last name of the cyclist being added
+  #
+  # Returns boolean
+  def self.valid?(options={})
+    if options.empty?
+      true
+    else
+      false
+    end
+  end
 end

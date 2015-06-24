@@ -20,10 +20,12 @@ end
 #
 # Adds cyclist to table
 get "/add_cyclist" do
-  if params["first_name"].empty? || params["last_name"].empty?
+  binding.pry
+  if Cyclist.valid?({"first_name" => params["first_name"], "last_name" => params["last_name"]})
+    
     erb :"/cyclists/add_cyclist_error"
   else 
-    Cyclist.add("first_name" => params["first_name"], "last_name" => params["last_name"], "nickname" => params["nickname"])
+    Cyclist.add_to_database("first_name" => params["first_name"], "last_name" => params["last_name"], "nickname" => params["nickname"])
     erb :"/cyclists/success"
   end
 end
