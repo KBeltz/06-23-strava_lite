@@ -1,6 +1,97 @@
 # ---------------------------------------------------------------------
-# cyclists
+# cyclists - menu
 # ---------------------------------------------------------------------
+
+# manage cyclists menu
 get "/cyclists" do
   erb :"/cyclists/manage_cyclists"
 end
+
+# ---------------------------------------------------------------------
+# create
+# ---------------------------------------------------------------------
+
+# form for user to enter information to add cyclist
+get "/add_cyclist_form" do
+  erb :"add_cyclist_form"
+end
+
+# Gets parameters from add_cyclist_form.
+#
+# Adds cyclist to table
+get "/add_cyclist" do
+  Cyclist.add("first_name" => params["first_name"], "last_name" => params["last_name"], "nickname" => params["nickname"])
+  
+  # erb :"success"
+end
+
+# ---------------------------------------------------------------------
+# read
+# ---------------------------------------------------------------------
+
+# Returns a list of all rows in the cyclists table.
+get "/view_cyclists" do
+  erb :"view_cyclists"
+end
+
+# ---------------------------------------------------------------------
+# update
+# ---------------------------------------------------------------------
+
+# edit cyclists form
+get "/edit_cyclist_form" do
+  erb :"edit_cyclist_form"
+end
+
+# Gets parameters from edit_cyclist_form
+#
+# Updates the item in the appropriate table of the database
+get "/edit_cyclist" do
+  @new_cyclist = Cyclist.find(params["id"])
+  
+  if !params["first_name"].empty?
+    @new_cyclist.first_name = params["first_name"]
+  end
+
+  if !params["last_name"].empty?
+    @new_cyclist.last_name = params["last_name"]
+  end
+  
+  if !params["nickname"].empty?
+    @new_cyclist.nickname = params["nickname"]
+  end
+  
+  # Save edited cyclist to database
+  @new_cyclist.save
+  
+  # erb :"success"
+end
+
+# ---------------------------------------------------------------------
+# delete
+# ---------------------------------------------------------------------
+
+get "/delete_cyclist" do
+  erb :"delete_cyclist"
+end
+
+get "/delete_cyclist/:x" do
+  @specific_cyclist = Cyclist.find(params["x"])
+  @specific_cyclist.delete_row
+  
+  # erb :"success"
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
