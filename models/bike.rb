@@ -21,9 +21,9 @@ class Bike
     
     # Example: {"id" => 1, "cyclist_id" => "3", "bike_name" => "Giant Revel I", "description" => "Matte grey MTB"}
     @id = options["id"]
-    @first_name = options["first_name"]
-    @last_name = options["last_name"]
-    @nickname = options["nickname"]
+    @cyclist_id = options["cyclist_id"]
+    @bike_name = options["bike_name"]
+    @description = options["description"]
  
   end
   
