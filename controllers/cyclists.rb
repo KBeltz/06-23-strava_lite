@@ -37,37 +37,36 @@ get "/view_cyclists" do
   erb :"/cyclists/view_cyclists"
 end
 
+# form to enter cyclist id
+get "/search_by_id_form" do
+  erb :"/cyclists/search_by_id_form"
+end
+
+# Returns user profile
+get "/search_by_id/:x" do
+  erb :"/cyclists/search_by_id"
+end
+
 # ---------------------------------------------------------------------
 # update
 # ---------------------------------------------------------------------
 
+# table of cyclist profiles
 get "/edit_cyclist_list" do
   erb :"/cyclists/edit_cyclist_list"
 end
 
 # edit cyclists form
 get "/edit_cyclist_form/:x" do
+  @new_cyclist = Cyclist.find(params["x"])
   erb :"/cyclists/edit_cyclist_form"
 end
 
 # Gets parameters from edit_cyclist_form
 #
 # Updates the item in the appropriate table of the database
-get "/edit_cyclist/:x" do
+get "/edit_cyclist/" do
   @new_cyclist = Cyclist.find(params["x"])
-  
-  if !params["first_name"].empty?
-    @new_cyclist.first_name = params["first_name"]
-  end
-
-  if !params["last_name"].empty?
-    @new_cyclist.last_name = params["last_name"]
-  end
-  
-  if !params["nickname"].empty?
-    @new_cyclist.nickname = params["nickname"]
-  end
-  
   @new_cyclist.save
   
   erb :"/cyclists/success"
