@@ -2,4 +2,7 @@
 
 <meta http-equiv="refresh" content ="3; url=/add_cyclist_form">
 
-<!-- I would like to figure out how to keep the values in the input fields when the user is redirected back to the add_cyclist_form. -->
+<input type="hidden" name="first_name" value="<%= params["first_name"] %>">
+<input type="hidden" name="last_name" value="<%= params["last_name"] %>">
+<input type="hidden" name="nickname" value="<%= params["nickname"] %>">
+

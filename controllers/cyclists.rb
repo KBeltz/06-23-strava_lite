@@ -16,6 +16,13 @@ get "/add_cyclist_form" do
   erb :"/cyclists/add_cyclist_form"
 end
 
+get "/add_cyclist_error" do
+  params["first_name"]
+  params["last_name"]
+  params["nickname"]
+  erb :"/cyclists/add_cyclist_error"
+end
+
 # Gets parameters from add_cyclist_form.
 #
 # Adds cyclist to table
@@ -27,6 +34,8 @@ get "/add_cyclist" do
     erb :"/cyclists/question"
   end
 end
+
+
 
 # ---------------------------------------------------------------------
 # read
