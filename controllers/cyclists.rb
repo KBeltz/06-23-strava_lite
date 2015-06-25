@@ -24,7 +24,7 @@ get "/add_cyclist" do
     erb :"/cyclists/add_cyclist_error"
   else 
     Cyclist.add_to_database("first_name" => params["first_name"], "last_name" => params["last_name"], "nickname" => params["nickname"])
-    erb :"/cyclists/success"
+    erb :"/cyclists/question"
   end
 end
 
