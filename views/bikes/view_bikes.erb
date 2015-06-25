@@ -1,21 +1,21 @@
 <p><h3>View Bikes</h3></p>
 
-This maybe needs to be altered to show bikes belonging to a particular cyclist.
+<!-- This maybe needs to be altered to show bikes belonging to a particular cyclist. -->
 
 
-<!-- <TABLE BORDER="5">
+<TABLE BORDER="5">
   <TH>ID</TH>
-  <TH>First Name</TH>
-  <TH>Last Name</TH>
-  <TH>Nickname</TH>
+  <TH>Owner ID</TH>
+  <TH>Bike Name</TH>
+  <TH>Description</TH>
 
-  <% Cyclist.all.each do |item| %>
+  <% Bike.all.each do |item| %>
 
     <TR>
       <TD><%= "#{item.id}" %>.</TD>
-      <TD><%= "#{item.first_name}" %></TD>
-      <TD><%= "#{item.last_name}" %></TD>
-      <TD><%= "#{item.nickname}" %></TD>
+      <TD><%= "#{item.cyclist_id}" %></TD>
+      <TD><%= "#{item.bike_name}" %></TD>
+      <TD><%= "#{item.description}" %></TD>
     </TR>
 
   <% end %>
@@ -23,4 +23,4 @@ This maybe needs to be altered to show bikes belonging to a particular cyclist.
 </TABLE>
 
 <br><br>
-<p><a href = "/home">Return To Main Menu</a></p> -->
+<p><a href = "/home">Return To Main Menu</a></p>

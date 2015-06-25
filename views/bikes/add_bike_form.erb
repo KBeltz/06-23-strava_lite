@@ -2,7 +2,7 @@
 
 <form action= "/add_bike">
   
-  <p><h4>Choose Bike Owner:</h4><select name="id"></p>
+  <p><h4>Choose Bike Owner:</h4><select name="cyclist_id"></p>
     <% Cyclist.all.each do |item| %>
       <option value="<%= item.id %>"> <%= item.first_name %> <%= item.last_name %></option>
     <% end %>
@@ -10,7 +10,7 @@
   
   <p>Bike Name: <input type="name" name= "bike_name" placeholder="Bianchi"></p>
   
-  <p>Description (optional): <input type="name" name= "last_name" placeholder="Doe"></p>
+  <p>Description (optional): <input type="name" name= "last_name" placeholder="Teal road bike"></p>
 
   <input type="submit" value="add bike">
   
