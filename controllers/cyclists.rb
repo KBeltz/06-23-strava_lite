@@ -43,7 +43,8 @@ get "/search_by_id_form" do
 end
 
 # Returns user profile
-get "/search_by_id/:x" do
+get "/search_by_id/" do
+  @new_cyclist = Cyclist.find(params["id"])
   erb :"/cyclists/search_by_id"
 end
 
