@@ -1,14 +1,16 @@
 <h3> Add Bike to Database</h3>
 
-<!-- Maybe link to this page after a cyclist is created? Like, congratulations! The cyclist was successfully added to the database. Add a bike? -->
-
 <form action= "/add_bike">
   
-  <p>First Name: <input type="name" name= "first_name" placeholder="Johnny"></p>
+  <p><h4>Choose Bike Owner:</h4><select name="id"></p>
+    <% Cyclist.all.each do |item| %>
+      <option value="<%= item.id %>"> <%= item.first_name %> <%= item.last_name %></option>
+    <% end %>
+  </select>
   
-  <p>Last Name: <input type="name" name= "last_name" placeholder="Doe"></p>
+  <p>Bike Name: <input type="name" name= "bike_name" placeholder="Bianchi"></p>
   
-  <p>Nickname (optional): <input type="name" name= "nickname" placeholder="JohnBikes"></p>
+  <p>Description (optional): <input type="name" name= "last_name" placeholder="Doe"></p>
 
   <input type="submit" value="add bike">
   
