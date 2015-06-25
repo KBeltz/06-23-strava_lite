@@ -41,16 +41,20 @@ end
 # update
 # ---------------------------------------------------------------------
 
+get "/edit_cyclist_list" do
+  erb :"/cyclists/edit_cyclist_list"
+end
+
 # edit cyclists form
-get "/edit_cyclist_form" do
+get "/edit_cyclist_form/:x" do
   erb :"/cyclists/edit_cyclist_form"
 end
 
 # Gets parameters from edit_cyclist_form
 #
 # Updates the item in the appropriate table of the database
-get "/edit_cyclist" do
-  @new_cyclist = Cyclist.find(params["id"])
+get "/edit_cyclist/:x" do
+  @new_cyclist = Cyclist.find(params["x"])
   
   if !params["first_name"].empty?
     @new_cyclist.first_name = params["first_name"]

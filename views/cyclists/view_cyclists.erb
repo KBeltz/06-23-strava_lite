@@ -8,7 +8,12 @@
   
   <% Cyclist.all.each do |item| %>
   
-  <TR><TD><%= "#{item.id}" %>.</TD> <TD><%= "#{item.first_name}" %></TD> <TD><%= "#{item.last_name}" %></TD> <TD><%= "#{item.nickname}" %></TD></TR>
+    <TR>
+      <TD><%= "#{item.id}" %>.</TD> 
+      <TD><%= "#{item.first_name}" %></TD> 
+      <TD><%= "#{item.last_name}" %></TD> 
+      <TD><%= "#{item.nickname}" %></TD>
+    </TR>
   
   <% end %>
 
