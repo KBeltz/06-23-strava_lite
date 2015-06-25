@@ -27,14 +27,14 @@ class Bike
  
   end
   
-  # method to validate cyclist profiles before they are added to the database
+  # method to validate bike profiles before they are added to the database
   #
-  # name1 - String containing the first name of the cyclist being added
-  # name2 - String containing the last name of the cyclist being added
+  # cyclist_id - Integer containing the cyclist id of the bike's owner
+  # bike_name  - String containing the make/model/name of the bike
   #
   # Returns boolean
-  def self.valid?(name1, name2)
-    if name1.empty? || name2.empty?
+  def self.valid?(cyclist_id, bike_name)
+    if cyclist_id.empty? || bike_name.empty?
       true
     else
       false
