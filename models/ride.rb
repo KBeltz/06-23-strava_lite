@@ -6,7 +6,7 @@ class Ride
   include DatabaseInstanceMethods
   
 
-  attr_accessor :id, :cyclist_id, :bike_id :ride_name, :miles, :datetime
+  attr_accessor :id, :cyclist_id, :bike_id, :ride_name, :miles, :datetime
 
   # Initializes a new Bike object
   #
