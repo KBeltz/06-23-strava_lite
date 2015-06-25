@@ -1,6 +1,8 @@
-<h3>Edit Cyclist Profile</h3>
+<h3>Edit Ride Data</h3>
 
-  <p><h4>Choose a cyclist to edit:</h4></p>
+<!-- Do I need to select from cyclists here first? -->
+
+  <p><h4>Choose a ride to edit:</h4></p>
   
   <TABLE BORDER="5">
     <TH>ID</TH>
@@ -8,10 +10,10 @@
     <TH>Last Name</TH>
     <TH>Nickname</TH>
   
-    <% Cyclist.all.each do |item| %>
+    <% Ride.all.each do |item| %>
   
       <TR>
-        <TD><a href='/edit_cyclist_form/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD> 
+        <TD><a href='/edit_ride_form/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD> 
         <TD><%= "#{item.first_name}" %></TD> 
         <TD><%= "#{item.last_name}" %></TD> 
         <TD><%= "#{item.nickname}" %></TD>
