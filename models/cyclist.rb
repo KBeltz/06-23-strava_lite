@@ -6,7 +6,8 @@ class Cyclist
   include DatabaseInstanceMethods
   
 
-  attr_accessor :id, :first_name, :last_name, :nickname
+  attr_accessor :first_name, :last_name, :nickname
+  attr_reader :id
 
   # Initializes a new Cyclist object
   #
