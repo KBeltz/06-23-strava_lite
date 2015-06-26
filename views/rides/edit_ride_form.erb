@@ -3,13 +3,12 @@
 <form action="/edit_ride/">   
 
   <p><h4>Update ride data as necessary.</h4></p>
-  <p>First Name: <input type="text" name="first_name" value="<%= @new_cyclist.first_name %>"></p>
-  <p>Last Name: <input type="text" name="last_name" value="<%= @new_cyclist.last_name %>"></p>
-  <p>Nickname: <input type="text" name="nickname" value="<%= @new_cyclist.nickname %>"></p>
+  <p>Ride Name: <input type="text" name="ride_name" value="<%= @new_ride.ride_name %>"></p>
+  <p>Distance (miles): <input type="text" name="miles" value="<%= @new_ride.miles %>"></p>
   
   <input type="hidden" name="x" value="<%= params["x"] %>">
   
-  <p><input type="submit" value="edit profile"></p>
+  <p><input type="submit" value="edit ride"></p>
 </form>
 <br><br>
 <a href = "/home">Return To Main Menu</a>
