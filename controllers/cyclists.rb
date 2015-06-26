@@ -57,6 +57,10 @@ get "/search_by_id/" do
   erb :"/cyclists/search_by_id"
 end
 
+get "/cyclists_and_bikes" do
+  erb :"/cyclists/cyclists_and_bikes"
+end
+
 # ---------------------------------------------------------------------
 # update
 # ---------------------------------------------------------------------

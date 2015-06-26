@@ -40,4 +40,12 @@ class Cyclist
       false
     end
   end
+  
+  # Get all cyclists and bikes.
+  #
+  # Return an Array of Hashes.
+  def self.cyclists_and_bikes
+    DATABASE.execute("SELECT cyclists.id, cyclists.first_name, cyclists.last_name, bikes.bike_name FROM cyclists LEFT JOIN bikes ON cyclists.id = bikes.cyclist_id")
+  end
+  
 end
