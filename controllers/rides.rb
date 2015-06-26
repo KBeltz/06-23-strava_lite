@@ -38,12 +38,12 @@ get "/view_rides" do
 end
 
 # form to enter ride id
-get "/search_by_id_form" do
+get "/rides/search_by_id_form" do
   erb :"/rides/search_by_id_form"
 end
 
 # Returns user profile
-get "/search_by_id/" do
+get "/rides/search_by_id/" do
   @new_ride = Ride.find(params["id"])
   erb :"/rides/search_by_id"
 end
