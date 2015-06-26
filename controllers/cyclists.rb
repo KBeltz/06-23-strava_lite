@@ -77,6 +77,9 @@ end
 # Updates the item in the appropriate table of the database
 get "/edit_cyclist/" do
   @new_cyclist = Cyclist.find(params["x"])
+  @new_cyclist.first_name = params["first_name"]
+  @new_cyclist.last_name = params["last_name"]
+  @new_cyclist.description = params["desription"]
   @new_cyclist.save
   
   erb :"/cyclists/success"

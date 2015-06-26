@@ -66,8 +66,10 @@ end
 # Gets parameters from edit_ride_form
 #
 # Updates the item in the appropriate table of the database
-get "/edit_ride/" do
+get "/edit_ride" do
   @new_ride = Ride.find(params["x"])
+  @new_ride.ride_name = params["ride_name"]
+  @new_ride.miles = params["miles"]
   @new_ride.save
   
   erb :"/rides/success"
