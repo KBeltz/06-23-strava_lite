@@ -23,7 +23,7 @@ get "/add_ride" do
   if Ride.valid?(params["cyclist_id"], params["bike_id"], params["miles"])
     erb :"/rides/add_ride_error"
   else 
-    Ride.add_to_database("cyclist_id" => params["cyclist_id"], "bike_id" => params["bike-id"], "ride_name" => params["ride_name"], "miles" => params["miles"])
+    Ride.add_to_database("cyclist_id" => params["cyclist_id"], "bike_id" => params["bike_id"], "ride_name" => params["ride_name"], "miles" => params["miles"])
     erb :"/rides/success"
   end
 end

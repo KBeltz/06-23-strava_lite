@@ -2,17 +2,21 @@
 
 <TABLE BORDER="5">
   <TH>ID</TH>
-  <TH>First Name</TH>
-  <TH>Last Name</TH>
-  <TH>Nickname</TH>
+  <TH>Cyclist ID</TH>
+  <TH>Bike ID</TH>
+  <TH>Ride Name</TH>
+  <TH>Distance (miles)</TH>
+  <TH>Date/Time</TH>
   
-  <% Cyclist.all.each do |item| %>
+  <% Ride.all.each do |item| %>
   
     <TR>
       <TD><%= "#{item.id}" %>.</TD> 
-      <TD><%= "#{item.first_name}" %></TD> 
-      <TD><%= "#{item.last_name}" %></TD> 
-      <TD><%= "#{item.nickname}" %></TD>
+      <TD><%= "#{item.cyclist_id}" %></TD> 
+      <TD><%= "#{item.bike_id}" %></TD> 
+      <TD><%= "#{item.ride_name}" %></TD>
+      <TD><%= "#{item.miles}" %></TD>
+      <TD><%= "#{item.period}" %></TD>
     </TR>
   
   <% end %>
