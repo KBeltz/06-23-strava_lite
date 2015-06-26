@@ -68,7 +68,9 @@ end
 # Updates the item in the appropriate table of the database
 get "/edit_bike" do
   @new_bike = Bike.find(params["x"])
-  binding.pry
+  @new_bike.bike_name = params["bike_name"]
+  @new_bike.cyclist_id = params["cyclist_id"]
+  @new_bike.description = params["description"]
   @new_bike.save
   
   erb :"/bikes/success"
