@@ -1,8 +1,5 @@
 <p><h3>View Bikes</h3></p>
 
-<!-- This maybe needs to be altered to show bikes belonging to a particular cyclist. -->
-
-
 <TABLE BORDER="5">
   <TH>ID</TH>
   <TH>Owner ID</TH>
@@ -12,10 +9,10 @@
   <% Bike.all.each do |item| %>
 
     <TR>
-      <TD><%= "#{item.id}" %>.</TD>
-      <TD><%= "#{item.cyclist_id}" %></TD>
-      <TD><%= "#{item.bike_name}" %></TD>
-      <TD><%= "#{item.description}" %></TD>
+      <TD> <%= "#{item.id}" %>. </TD>
+      <TD> #<%= "#{item.cyclist_id}" %> </TD>
+      <TD> <%= "#{item.bike_name}" %> </TD>
+      <TD> <%= "#{item.description}" %> </TD>
     </TR>
 
   <% end %>

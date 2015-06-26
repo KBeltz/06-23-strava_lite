@@ -2,21 +2,19 @@
 
   <p><h4>Choose a bike to edit:</h4></p>
   
-  <!-- How will this change? Choose a cyclist first? Or choose from a whole list of bikes? -->
-  
   <TABLE BORDER="5">
     <TH>ID</TH>
-    <TH>First Name</TH>
-    <TH>Last Name</TH>
-    <TH>Nickname</TH>
+    <TH>Cyclist ID</TH>
+    <TH>Bike Name</TH>
+    <TH>Description</TH>
   
-    <% Cyclist.all.each do |item| %>
+    <% Bike.all.each do |item| %>
   
       <TR>
-        <TD><a href='/edit_cyclist_form/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD> 
-        <TD><%= "#{item.first_name}" %></TD> 
-        <TD><%= "#{item.last_name}" %></TD> 
-        <TD><%= "#{item.nickname}" %></TD>
+        <TD><a href='/edit_bike_form/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD> 
+        <TD><%= "#{item.cyclist_id}" %></TD> 
+        <TD><%= "#{item.bike_name}" %></TD> 
+        <TD><%= "#{item.description}" %></TD>
       </TR>
   
     <% end %>

@@ -23,7 +23,7 @@ get "/add_bike" do
   if Bike.valid?(params["cyclist_id"], params["bike_name"])
     erb :"/bikes/add_bike_error"
   else 
-    Bike.add_to_database("first_name" => params["first_name"], "last_name" => params["last_name"], "nickname" => params["nickname"])
+    Bike.add_to_database("cyclist_id" => params["cyclist_id"], "bike_name" => params["bike_name"], "description" => params["description"])
     erb :"/bikes/success"
   end
 end
