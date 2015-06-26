@@ -57,9 +57,13 @@ get "/search_by_id/" do
   erb :"/cyclists/search_by_id"
 end
 
-get "/cyclists_and_bikes" do
-  @cyclists_and_bikes = Cyclist.cyclists_and_bikes
-  binding.pry
+get "/cyclists_and_bikes_form" do
+  erb :"/cyclists/cyclists_and_bikes_form"
+end
+
+get "/cyclists_and_bikes/:x" do
+  @cyclist = Cyclist.find(params["x"])
+  @cyclists_and_bikes = @cyclist.bikes_owned
   erb :"/cyclists/cyclists_and_bikes"
 end
 

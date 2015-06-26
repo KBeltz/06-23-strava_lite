@@ -41,19 +41,11 @@ class Cyclist
     end
   end
   
-  # Get all cyclists and bikes.
+  # Get all bikes owned by a specific cyclist.
   #
-  # Return an Array of Hashes.
-  def self.cyclists_and_bikes
-    results = DATABASE.execute("SELECT cyclists.id, cyclists.first_name, cyclists.last_name, bikes.bike_name AS bike FROM cyclists LEFT JOIN bikes ON cyclists.id = bikes.cyclist_id")
-
-    results_as_objects = []
-    
-    results.each do |result_hash|
-      results_as_objects << self.new(result_hash)
-    end
-    
-    return results_as_objects
+  # Return 
+  def bikes_owned
+    DATABASE.execute("SELECT bikes.bike_name FROM bikes JOIN cyclists ON bikes.cyclist_id = cyclists.id WHERE cyclists.id = #{id}")
   end
   
 end

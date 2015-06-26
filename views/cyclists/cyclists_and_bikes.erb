@@ -1,25 +1,7 @@
-<p><h3>View Cyclists and Bikes</h3></p>
+<h3>All of <%= @cyclist.first_name %>'s Bikes.</h3>
 
-<TABLE BORDER="5">
-  <TH>Cyclist ID</TH>
-  <TH>First Name</TH>
-  <TH>Last Name</TH>
-  <TH>Bike Name</TH>
-  
+<ul>
   <% @cyclists_and_bikes.each do |item| %>
-  
-    <TR>
-      <TD><%= "#{item.id}" %>.</TD> 
-      <TD><%= "#{item.first_name}" %></TD> 
-      <TD><%= "#{item.last_name}" %></TD> 
-      <TD><%= "#{item.bike}" %></TD>
-    </TR>
-    
-    
-  
+    <li><%= item["bike_name"] %></li>
   <% end %>
-
-</TABLE>
-
-<br><br>
-<p><a href = "/home">Return To Main Menu</a></p>
+</ul>
