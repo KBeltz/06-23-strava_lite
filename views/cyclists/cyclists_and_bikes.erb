@@ -6,13 +6,13 @@
   <TH>Last Name</TH>
   <TH>Bike Name</TH>
   
-  <% Cyclist.cyclists_and_bikes.each do |item| %>
+  <% @cyclists_and_bikes.each do |item| %>
   
     <TR>
       <TD><%= "#{item.id}" %>.</TD> 
       <TD><%= "#{item.first_name}" %></TD> 
       <TD><%= "#{item.last_name}" %></TD> 
-      <TD><%= "#{item.bike_name}" %></TD>
+      <TD><%= "#{item.bike}" %></TD>
     </TR>
     
     

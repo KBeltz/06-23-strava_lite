@@ -58,6 +58,8 @@ get "/search_by_id/" do
 end
 
 get "/cyclists_and_bikes" do
+  @cyclists_and_bikes = Cyclist.cyclists_and_bikes
+  binding.pry
   erb :"/cyclists/cyclists_and_bikes"
 end
 
