@@ -37,8 +37,6 @@ class Cyclist
   def self.valid?(name1, name2)
     if name1.empty? || name2.empty?
       true
-    else
-      false
     end
   end
   

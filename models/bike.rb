@@ -37,8 +37,6 @@ class Bike
   def self.valid?(cyclist_id, bike_name)
     if cyclist_id.empty? || bike_name.empty?
       true
-    else
-      false
     end
   end 
   
