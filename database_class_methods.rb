@@ -7,13 +7,12 @@ require "active_support/inflector"
  
 module DatabaseClassMethods
   
-  table_name = self.to_s.pluralize.underscore
   # Get all of the rows for a table.
   #
   # Returns an Array containing Hashes for each row.
   def all
     # Figure out the table's name from the class we're calling the method on.
-    # table_name = self.to_s.pluralize.underscore
+    table_name = self.to_s.pluralize.underscore
     
     results = DATABASE.execute("SELECT * FROM #{table_name}")
  
@@ -43,7 +42,7 @@ module DatabaseClassMethods
   # Returns an object 
   def find(record_id)
     # Figure out the table's name from the class we're calling the method on.
-    # table_name = self.to_s.pluralize.underscore
+    table_name = self.to_s.pluralize.underscore
     
     result = DATABASE.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}").first
      
@@ -75,7 +74,7 @@ module DatabaseClassMethods
     
     # Alternative:
     # values.to_s.delete("\[\]")
-    # table_name = self.to_s.pluralize.underscore
+    table_name = self.to_s.pluralize.underscore
     
     DATABASE.execute("INSERT INTO #{table_name} (#{column_names_for_sql}) VALUES (#{values_for_sql});")
  
