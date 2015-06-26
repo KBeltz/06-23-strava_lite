@@ -48,6 +48,16 @@ get "/search_by_id/" do
   erb :"/bikes/search_by_id"
 end
 
+get "/bikes_and_rides_form" do
+  erb :"/bikes/bikes_and_rides_form"
+end
+
+get "/bikes_and_rides/:x" do
+  @bike = Bike.find(params["x"])
+  @bikes_and_rides = @bike.rides_list
+  erb :"/bikes/bikes_and_rides"
+end
+
 # ---------------------------------------------------------------------
 # update
 # ---------------------------------------------------------------------

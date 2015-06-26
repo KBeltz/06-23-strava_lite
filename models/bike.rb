@@ -39,5 +39,13 @@ class Bike
     else
       false
     end
+  end 
+  
+  # Get all rides by a specific bike.
+  #
+  # Return 
+  def rides_list
+    DATABASE.execute("SELECT rides.ride_name, rides.miles FROM rides JOIN bikes ON rides.bike_id = bikes.id WHERE bikes.id = #{id}")
   end
+  
 end
