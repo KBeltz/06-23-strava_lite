@@ -4,13 +4,10 @@
 
   <p><h4>Update bike info as necessary.</h4></p>
   
-  <p><h4>Choose new owner:</h4><select name="cyclist_id"></p>
-    <% Cyclist.all.each do |item| %>
-      <option value="<%= item.id %>"> <%= item.first_name %> <%= item.last_name %></option>
-    <% end %>
-  </select>
-
+  <p><h4>New Owner ID:<input type="number" name="cyclist_id" value="<%= @new_bike.cyclist_id %>"></p>
+    
   <p>Bike Name: <input type="text" name="bike_name" value="<%= @new_bike.bike_name %>"></p>
+  
   <p>Description: <input type="text" name="description" value="<%= @new_bike.description %>"></p>
   
   <input type="hidden" name="x" value="<%= params["x"] %>">
