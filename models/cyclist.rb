@@ -45,7 +45,15 @@ class Cyclist
   #
   # Return an Array of Hashes.
   def self.cyclists_and_bikes
-    DATABASE.execute("SELECT cyclists.id, cyclists.first_name, cyclists.last_name, bikes.bike_name FROM cyclists LEFT JOIN bikes ON cyclists.id = bikes.cyclist_id")
+    results = DATABASE.execute("SELECT cyclists.id, cyclists.first_name, cyclists.last_name, bikes.bike_name FROM cyclists LEFT JOIN bikes ON cyclists.id = bikes.cyclist_id")
+
+    results_as_objects = []
+    
+    results.each do |result_hash|
+      results_as_objects << self.new(result_hash)
+    end
+    
+    return results_as_objects
   end
   
 end
