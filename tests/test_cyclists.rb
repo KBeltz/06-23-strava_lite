@@ -1,9 +1,12 @@
-# require 'minitest/autorun'
+require 'minitest/autorun'
+require_relative '../models/cyclist.rb'
 
-# class inherit stuff
+class CyclistTest < Minitest::Unit::TestCase
 
-# def test_validate_cyclist
-#
-#   assert_equal thing1, thing2
-#
-# end
+  def test_valid?
+    name = ""
+
+    assert_empty(name)
+  end
+
+end
