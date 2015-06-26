@@ -38,12 +38,12 @@ get "/view_bikes" do
 end
 
 # form to enter bike id
-get "/search_by_id_form" do
+get "/bikes/search_by_id_form" do
   erb :"/bikes/search_by_id_form"
 end
 
 # Returns user profile
-get "/search_by_id/" do
+get "/bikes/search_by_id/" do
   @new_bike = Bike.find(params["id"])
   erb :"/bikes/search_by_id"
 end
