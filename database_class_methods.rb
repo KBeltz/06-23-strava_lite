@@ -48,56 +48,6 @@ module DatabaseClassMethods
      
     self.new(result)
   end
-  
-  # # sort - call to database to sort table by column name in descending order.
-  # #
-  # # Returns an Array of Objects
-  # def sort(column_name)
-  #   table_name = self.to_s.pluralize.underscore
-  #   results = DATABASE.execute("SELECT * FROM #{table_name} ORDER BY #{column_name} DESC;")
-  #
-  #   results_as_objects = []
-  #
-  #   results.each do |result_hash|
-  #     results_as_objects << self.new(result_hash)
-  #   end
-  #
-  #   return results_as_objects
-  # end
-  #
-  # # sort - call to database to sort table by column name in ascending order.
-  # #
-  # # Returns an Array of Objects
-  # def sort_asc(column_name)
-  #   table_name = self.to_s.pluralize.underscore
-  #   results = DATABASE.execute("SELECT * FROM #{table_name} ORDER BY #{column_name} ASC;")
-  #
-  #   results_as_objects = []
-  #
-  #   results.each do |result_hash|
-  #     results_as_objects << self.new(result_hash)
-  #   end
-  #
-  #   return results_as_objects
-  # end
-  #
-  # # where - calls method on class to gather rows that have a specific value in a specific column.
-  # #
-  # # Example Product.where("category_id", 3)
-  # # => [234343 name: Chair brand: Spring category_id: 3 quantity: 4]
-  # #
-  # # Returns an Array of Objects
-  # def where(column_name, column_id)
-  #   table_name = self.to_s.pluralize.underscore
-  #   results = DATABASE.execute("SELECT * FROM #{table_name} WHERE #{column_name} = #{column_id};")
-  #   results_as_objects = []
-  #
-  #   results.each do |result_hash|
-  #     results_as_objects << self.new(result_hash)
-  #   end
-  #
-  #   return results_as_objects
-  # end
  
   # Add a new record to the database.
   #
