@@ -10,7 +10,10 @@
   
   <p>Description: <input type="text" name="description" value="<%= @new_bike.description %>"></p>
   
-  <input type="hidden" name="x" value="<%= params["x"] %>">
+  <input type="hidden" name="description" value="<%= params["description"] %>">
+  <input type="hidden" name="bike_name" value="<%= params["bike_name"] %>">
+  <input type="hidden" name="cyclist_id" value="<%= params["cyclist_id"] %>">
+  <!-- <input type="hidden" name="x" value="<%=# params["x"] %>"> -->
   
   <p><input type="submit" value="edit bike"></p>
 </form>
