@@ -3,11 +3,9 @@
   <p><h4>Choose a bike to delete:</h4></p>
   <% Bike.all.each do |item| %>
     <ul>
-      <li><a href="/delete_cyclist/<%= item.id %>"> First Name: <%= item.first_name %> / Last Name: <%= item.last_name %> / Nickname: <%= item.nickname %></a></li>
+      <li><a href="/delete_bike/<%= item.id %>"> Bike Owner's Cyclist ID: <%= item.cyclist_id %> / Bike Name: <%= item.bike_name %> / Description: <%= item.description %></a></li>
     </ul>
       <% end %>
-      
-      <!-- Maybe have a choose reason for deletion option? Sold/stolen/given away? Probably not necessary. -->
 
 <br><br>  
 <p><a href = "/home">Return To Main Menu</a><p>
