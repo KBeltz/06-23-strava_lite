@@ -3,13 +3,19 @@
 <form action="/edit_bike/">   
 
   <p><h4>Update bike info as necessary.</h4></p>
-  <p>First Name: <input type="text" name="first_name" value="<%= @new_cyclist.first_name %>"></p>
-  <p>Last Name: <input type="text" name="last_name" value="<%= @new_cyclist.last_name %>"></p>
-  <p>Nickname: <input type="text" name="nickname" value="<%= @new_cyclist.nickname %>"></p>
+  
+  <p><h4>Choose new owner:</h4><select name="cyclist_id"></p>
+    <% Cyclist.all.each do |item| %>
+      <option value="<%= item.id %>"> <%= item.first_name %> <%= item.last_name %></option>
+    <% end %>
+  </select>
+
+  <p>Bike Name: <input type="text" name="bike_name" value="<%= @new_bike.bike_name %>"></p>
+  <p>Description: <input type="text" name="description" value="<%= @new_bike.description %>"></p>
   
   <input type="hidden" name="x" value="<%= params["x"] %>">
   
-  <p><input type="submit" value="edit profile"></p>
+  <p><input type="submit" value="edit bike"></p>
 </form>
 <br><br>
 <a href = "/home">Return To Main Menu</a>
