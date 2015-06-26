@@ -66,8 +66,9 @@ end
 # Gets parameters from edit_bike_form
 #
 # Updates the item in the appropriate table of the database
-get "/edit_bike/" do
+get "/edit_bike" do
   @new_bike = Bike.find(params["x"])
+  binding.pry
   @new_bike.save
   
   erb :"/bikes/success"
