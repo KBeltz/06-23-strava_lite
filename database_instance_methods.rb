@@ -2,20 +2,23 @@ require "active_support"
 require "active_support/inflector"
  
 module DatabaseInstanceMethods
+  
+  # gets class name and returns corresponding table name
+  def get_table_name
+    self.class.to_s.pluralize.underscore
+  end
  
   # delete - delete row of object in table according to saved ID in instance.
   # 
   # Returns nil because row is deleted. 
   def delete_row
-    DATABASE.execute("DELETE FROM #{self.class.to_s.pluralize.underscore} WHERE id = #{@id};")
+    DATABASE.execute("DELETE FROM #{get_table_name} WHERE id = #{@id};")
   end
   
   # Updates/saves a row's information in a table
   #
   # Returns updated Object
   def save
-    table = self.class.to_s.pluralize.underscore
- 
     instance_variables = self.instance_variables
  
     attribute_hash = {}
@@ -36,7 +39,7 @@ module DatabaseInstanceMethods
  
     for_sql = individual_instance_variables.join(', ')
  
-    DATABASE.execute("UPDATE #{table} SET #{for_sql} WHERE id = #{self.id}")
+    DATABASE.execute("UPDATE #{get_table_name} SET #{for_sql} WHERE id = #{self.id}")
  
     return self
   end
