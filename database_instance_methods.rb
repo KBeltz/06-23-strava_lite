@@ -9,7 +9,8 @@ module DatabaseInstanceMethods
   # Returns nil because row is deleted. 
   def delete_row
     # Figure out the table's name from the object we're calling the method on.
-    table_name = self.class.to_s.pluralize.underscore
+    # table_name = self.class.to_s.pluralize.underscore
+    binding.pry
     DATABASE.execute("DELETE FROM #{table_name} WHERE id = #{@id};")
   end
   
