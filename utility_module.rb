@@ -5,7 +5,7 @@ module Utility
   
   # takes the class name and returns the name of the correspondng table
   def get_table_name
-    self.to_s.pluralize.underscore
+    return self.to_s.pluralize.underscore
   end
   
   # Takes an array of hashes from the database and returns an array of objects  

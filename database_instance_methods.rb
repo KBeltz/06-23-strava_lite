@@ -1,7 +1,12 @@
 require "active_support"
 require "active_support/inflector"
+require_relative "utility_module.rb"
  
 module DatabaseInstanceMethods
+  
+  def get_table_name
+    return self.class.to_s.pluralize.underscore
+  end
  
   # delete - deleted entire row of object in table according to saved ID in
   #   instance.
@@ -10,8 +15,8 @@ module DatabaseInstanceMethods
   def delete_row
     # Figure out the table's name from the object we're calling the method on.
     # table_name = self.class.to_s.pluralize.underscore
-    binding.pry
-    DATABASE.execute("DELETE FROM #{table_name} WHERE id = #{@id};")
+    # binding.pry
+    DATABASE.execute("DELETE FROM #{get_table_name} WHERE id = #{@id};")
   end
   
   # Updates/saves a row's information in a table
