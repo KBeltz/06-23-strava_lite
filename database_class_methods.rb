@@ -12,22 +12,28 @@ module DatabaseClassMethods
     self.to_s.pluralize.underscore
   end
   
-  # Get all of the rows for a table.
+  # Gets an array of hashes from the database and turns the hashes into objects
   #
-  # Returns an Array containing Hashes for each row.
-  def all
-    # Figure out the table's name from the class we're calling the method on.
-    # table_name = self.to_s.pluralize.underscore
-    
-    results = DATABASE.execute("SELECT * FROM #{table_name}")
+  # results - Array of hashes, each hash containing one table row
+  #
+  # Returns an Array of objects
+  def results_as_objects(results)
+    array_of_objects = []
 
-    results_as_objects = []
-
-    results.each do |result_hash|
-      results_as_objects << self.new(result_hash)
+    results.each do |hash|
+      array_of_objects << self.new(hash)
     end
 
-    return results_as_objects
+    return array_of_objects
+  end
+  
+  # Get all of the rows for a specific table.
+  #
+  # Returns an Array containing objects.
+  def all
+    results = DATABASE.execute("SELECT * FROM #{table_name}")
+    
+    object_list = results_as_objects(results)
   end
   
   # This method finds a product based on the ID in database and makes
