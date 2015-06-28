@@ -3,8 +3,7 @@ require "active_support/inflector"
  
 module DatabaseInstanceMethods
  
-  # delete - deleted entire row of object in table according to saved ID in
-  #   instance.
+  # delete - delete row of object in table according to saved ID in instance.
   # 
   # Returns nil because row is deleted. 
   def delete_row

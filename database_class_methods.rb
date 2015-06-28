@@ -11,29 +11,24 @@ module DatabaseClassMethods
     table_name = self.to_s.pluralize.underscore
     
     results = DATABASE.execute("SELECT * FROM #{table_name}")
- 
+
     results_as_objects = []
-    
+
     results.each do |result_hash|
       results_as_objects << self.new(result_hash)
     end
-    
+
     return results_as_objects
   end
   
-  # find - Use this method to find a 
-  # product based on the ID in database.
+  # This method finds a product based on the ID in database and makes
+  #   a new instance of row
   #
-  # record_id- The Integer ID of the row to return.
-  #
+  # record_id - The Integer ID of the row to return.
   #
   #    # Here, I'm using the `find` method from DatabaseClassMethods.
   #    result = Product.find(product_id).first
   #    # {"id" => 1, "name" => "Sumeet", "age" => 500}
-  #
-  #    
-  #  
-  # makes new instance of row
   #
   # Returns an object 
   def find(record_id)
