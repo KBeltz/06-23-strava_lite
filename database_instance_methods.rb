@@ -19,20 +19,19 @@ module DatabaseInstanceMethods
     DATABASE.execute("DELETE FROM #{get_table_name} WHERE id = #{@id};")
   end
   
-  # Updates/saves a row's information in a table
-  #
-  # Returns updated Object
-  def save
+  def create_attribute_hash
     instance_variables = self.instance_variables
- 
     attribute_hash = {}
- 
+
     instance_variables.each do |variable|
       attribute_hash["#{variable.slice(1..-1)}"] = self.send("#{variable.slice(1..-1)}")
     end
- 
+    return attribute_hash
+  end
+  
+  def sql_variables(attribute_hash)
     individual_instance_variables = []
- 
+
     attribute_hash.each do |key, value|
       if value.is_a?(String)
         individual_instance_variables << "#{key} = '#{value}'"
@@ -40,10 +39,38 @@ module DatabaseInstanceMethods
         individual_instance_variables << "#{key} = #{value}"
       end
     end
- 
+
     for_sql = individual_instance_variables.join(', ')
+    return for_sql
+  end
+  
+  
+  
+  # Updates/saves a row's information in a table
+  #
+  # Returns updated Object
+  def save
+    # instance_variables = self.instance_variables
+    #
+    # attribute_hash = {}
+    #
+    # instance_variables.each do |variable|
+    #   attribute_hash["#{variable.slice(1..-1)}"] = self.send("#{variable.slice(1..-1)}")
+    # end
  
-    DATABASE.execute("UPDATE #{get_table_name} SET #{for_sql} WHERE id = #{self.id}")
+    # individual_instance_variables = []
+    #
+    # attribute_hash.each do |key, value|
+    #   if value.is_a?(String)
+    #     individual_instance_variables << "#{key} = '#{value}'"
+    #   else
+    #     individual_instance_variables << "#{key} = #{value}"
+    #   end
+    # end
+    #
+    # for_sql = individual_instance_variables.join(', ')
+ 
+    DATABASE.execute("UPDATE #{get_table_name} SET #{sql_variables(create_attribute_hash)} WHERE id = #{self.id}")
  
     return self
   end
