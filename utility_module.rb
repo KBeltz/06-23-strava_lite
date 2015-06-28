@@ -1,8 +1,12 @@
-
+require "active_support"
+require "active_support/inflector"
 
 module Utility
+  attr_accessor :table_name
   
-  # Takes an array of hashes from the database and returns an array of objects      
+  @table_name = self.to_s.pluralize.underscore
+  
+  # Takes an array of hashes from the database and returns an array of objects  
   def results_as_objects(database_results)
   
     array_of_objects = []

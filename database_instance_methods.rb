@@ -1,20 +1,16 @@
 require "active_support"
 require "active_support/inflector"
  
- 
-# This module will be **extended** in all of my classes. It contains methods
-# that will become **class** methods for the class.
- 
 module DatabaseInstanceMethods
  
-  # delete - deleted entire row of object in table according to saved ID in instance.
+  # delete - deleted entire row of object in table according to saved ID in
+  #   instance.
   # 
   # Returns nil because row is deleted. 
-  # instance method.
   def delete_row
     # Figure out the table's name from the object we're calling the method on.
     table_name = self.class.to_s.pluralize.underscore
-    DATABASE.execute("DELETE FROM #{table_name} WHERE id = #{@id};") # need to see if this one will work, if not look up.
+    DATABASE.execute("DELETE FROM #{table_name} WHERE id = #{@id};")
   end
   
   # Updates/saves a row's information in a table

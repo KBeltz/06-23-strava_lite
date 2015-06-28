@@ -1,10 +1,6 @@
 require "active_support"
 require "active_support/inflector"
  
- 
-# This module will be **extended** in all of my classes. It contains methods
-# that will become **class** methods for the class.
- 
 module DatabaseClassMethods
   
   # Get all of the rows for a table.
