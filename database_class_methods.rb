@@ -32,7 +32,6 @@ module DatabaseClassMethods
   # Returns an Array containing objects.
   def all
     results = DATABASE.execute("SELECT * FROM #{table_name}")
-    
     object_list = results_as_objects(results)
   end
   
@@ -47,9 +46,6 @@ module DatabaseClassMethods
   #
   # Returns an object 
   def find(record_id)
-    # Figure out the table's name from the class we're calling the method on.
-    table_name = self.to_s.pluralize.underscore
-    
     result = DATABASE.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}").first
      
     self.new(result)
@@ -59,7 +55,6 @@ module DatabaseClassMethods
   #
   # Returns an Object.
   def add_to_database(options={})
-    # Example: {"name" => "Sumeet", "age" => 500}
     
     column_names = options.keys
     values = options.values
@@ -77,8 +72,6 @@ module DatabaseClassMethods
     end
     
     values_for_sql = individual_values_for_sql.join(", ")
-    
-    table_name = self.to_s.pluralize.underscore
     
     DATABASE.execute("INSERT INTO #{table_name} (#{column_names_for_sql}) VALUES (#{values_for_sql});")
  
