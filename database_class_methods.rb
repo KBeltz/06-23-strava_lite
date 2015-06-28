@@ -3,12 +3,21 @@ require "active_support/inflector"
  
 module DatabaseClassMethods
   
+  # Determines appropriate table name 
+  #
+  # Gets class name from self
+  # 
+  # Returns String containing corresponding table name
+  def table_name
+    self.to_s.pluralize.underscore
+  end
+  
   # Get all of the rows for a table.
   #
   # Returns an Array containing Hashes for each row.
   def all
     # Figure out the table's name from the class we're calling the method on.
-    table_name = self.to_s.pluralize.underscore
+    # table_name = self.to_s.pluralize.underscore
     
     results = DATABASE.execute("SELECT * FROM #{table_name}")
 

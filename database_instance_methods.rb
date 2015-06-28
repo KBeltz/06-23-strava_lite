@@ -3,7 +3,11 @@ require "active_support/inflector"
  
 module DatabaseInstanceMethods
   
-  # gets class name and returns corresponding table name
+  # Determines appropriate table name 
+  #
+  # Gets class name from self.class
+  # 
+  # Returns String containing corresponding table name
   def get_table_name
     self.class.to_s.pluralize.underscore
   end
