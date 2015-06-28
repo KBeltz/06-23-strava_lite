@@ -2,9 +2,6 @@ require "pry"
 require "sinatra"
 require "sinatra/reloader"
 
-# Module
-require_relative "utility_module.rb"
-
 # SQL/Database
 require "sqlite3"
 require_relative "database_setup.rb"
