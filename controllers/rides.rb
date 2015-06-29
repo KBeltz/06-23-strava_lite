@@ -59,10 +59,9 @@ get "/calculate_ride" do
      "destination"=> params["destination"],
      "mode"=>"bicycling",
      "key"=>"AIzaSyB3DLdYmSzi0BBgBZPiqKy_qQLFCBisLyw"}}
-     binding.pry
   response = HTTParty.get("https://maps.googleapis.com/maps/api/directions/json", distance_hash)
-  response["distance"]
-   # erb :"/rides/calculate_ride"
+  @distance = response["routes"][0]["legs"][0]["distance"]["text"]
+  erb :"/rides/calculate_ride"
  end
 
 # ---------------------------------------------------------------------
