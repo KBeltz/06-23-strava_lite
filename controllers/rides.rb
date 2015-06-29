@@ -48,6 +48,11 @@ get "/rides/search_by_id/" do
   erb :"/rides/search_by_id"
 end
 
+# Google Maps API attempt
+get "/calculate_ride_form" do
+  erb :"/rides/calculate_ride_form"
+end
+
 # ---------------------------------------------------------------------
 # update
 # ---------------------------------------------------------------------
