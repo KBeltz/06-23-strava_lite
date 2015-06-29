@@ -1,7 +1,7 @@
 require "pry"
 require "sinatra"
 require "sinatra/reloader"
-require "json"
+require "HTTParty"
 
 # SQL/Database
 require "sqlite3"

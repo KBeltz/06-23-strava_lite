@@ -26,13 +26,11 @@ end
 get "/add_cyclist" do
   if Cyclist.valid?(params["first_name"], params["last_name"])
     erb :"/cyclists/add_cyclist_error"
-  else 
+  else
     Cyclist.add_to_database("first_name" => params["first_name"], "last_name" => params["last_name"], "nickname" => params["nickname"])
     erb :"/cyclists/question"
   end
 end
-
-
 
 # ---------------------------------------------------------------------
 # read
@@ -88,7 +86,7 @@ get "/edit_cyclist/" do
   @new_cyclist.last_name = params["last_name"]
   @new_cyclist.nickname = params["nickname"]
   @new_cyclist.save
-  
+
   erb :"/cyclists/success"
 end
 
@@ -103,6 +101,6 @@ end
 get "/delete_cyclist/:x" do
   @specific_cyclist = Cyclist.find(params["x"])
   @specific_cyclist.delete_row
-  
+
   erb :"/cyclists/success"
 end

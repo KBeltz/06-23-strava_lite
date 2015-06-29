@@ -22,7 +22,7 @@ end
 get "/add_ride" do
   if Ride.valid?(params["cyclist_id"], params["bike_id"], params["miles"])
     erb :"/rides/add_ride_error"
-  else 
+  else
     Ride.add_to_database("cyclist_id" => params["cyclist_id"], "bike_id" => params["bike_id"], "ride_name" => params["ride_name"], "miles" => params["miles"])
     erb :"/rides/success"
   end
@@ -53,6 +53,18 @@ get "/calculate_ride_form" do
   erb :"/rides/calculate_ride_form"
 end
 
+get "/calculate_ride" do
+  distance_hash = {:query=>
+    {"origin"=> params["origin"],
+     "destination"=> params["destination"],
+     "mode"=>"bicycling",
+     "key"=>"AIzaSyB3DLdYmSzi0BBgBZPiqKy_qQLFCBisLyw"}}
+     binding.pry
+  response = HTTParty.get("https://maps.googleapis.com/maps/api/directions/json", distance_hash)
+  response["distance"]
+   # erb :"/rides/calculate_ride"
+ end
+
 # ---------------------------------------------------------------------
 # update
 # ---------------------------------------------------------------------
@@ -76,7 +88,7 @@ get "/edit_ride" do
   @new_ride.ride_name = params["ride_name"]
   @new_ride.miles = params["miles"]
   @new_ride.save
-  
+
   erb :"/rides/success"
 end
 
@@ -91,6 +103,6 @@ end
 get "/delete_ride/:x" do
   @specific_ride = Ride.find(params["x"])
   @specific_ride.delete_row
-  
+
   erb :"/rides/success"
 end
