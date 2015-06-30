@@ -7,12 +7,31 @@ box-sizing: inherit;
 
 }
 
+a {
+text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 body {
+  margin: 0;
   text-align: center;
   background-color: lavender;
   font-family: verdana, arial, sans-serif;
+  font-size: 200%;
 }
 
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }

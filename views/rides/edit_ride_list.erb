@@ -7,21 +7,18 @@
     <TH>Ride Name</TH>
     <TH>Distance (miles)</TH>
     <TH>Date/Time</TH>
-  
+
     <% Ride.all.each do |item| %>
-  
+
       <TR>
-        <TD><a href='/edit_ride_form/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD> 
-        <TD><%= "#{item.cyclist_id}" %></TD> 
-        <TD><%= "#{item.bike_id}" %></TD> 
+        <TD><a href='/edit_ride_form/<%= "#{item.id}" %>'><%= "#{item.id}" %>.</a></TD>
+        <TD><%= "#{item.cyclist_id}" %></TD>
+        <TD><%= "#{item.bike_id}" %></TD>
         <TD><%= "#{item.ride_name}" %></TD>
         <TD><%= "#{item.miles}" %></TD>
         <TD><%= "#{item.period}" %></TD>
       </TR>
-  
+
     <% end %>
 
   </TABLE>
-
-  <br><br>
-  <p><a href = "/home">Return To Main Menu</a></p>
